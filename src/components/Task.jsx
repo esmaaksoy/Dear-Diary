@@ -1,16 +1,18 @@
 import { FiEdit2 } from "react-icons/fi";
 import { FaTrash } from "react-icons/fa6";
-const Task = ({task,day}) => {
+const Task = ({ task, day, value,date }) => {
   return (
-    <div className="d-flex justify-content-between">
-    <p>{task}</p>
-    <p>{day}</p>
-    <div className="d-flex justify-content-center align-items-center">
-    <FiEdit2 />
-    <FaTrash />
+    <div className="d-flex justify-content-between align-items-center">
+  
+        <p>{new Date(date).getDate()}/{task}</p>
+  
+        <div >
+        <FiEdit2 className="text-white me-2"/>
+        <FaTrash className="text-white"/>
+        </div>
+      
     </div>
-  </div>
-  )
-}
+  );
+};
 
-export default Task
+export default Task;

@@ -1,31 +1,58 @@
-
-import Button from "react-bootstrap/Button";
 import Modal from "react-bootstrap/Modal";
-import Form from "react-bootstrap/Form";
-import InputGroup from "react-bootstrap/InputGroup";
-import { useState } from "react";
-const CardModal = ({show,setShow}) => {
-  const [value,setValue]=useState();
- console.log(value)
-  const handleSubmit=(e)=>{
-    e.preventDefault()
-    setShow(false)
 
-  }
+const CardModal = ({
+  show,
+  setShow,
+  months,
+  addTask,
+  value,
+  setValue,
+  setData,
+  setDate,
+  data,
+}) => {
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    setShow(false);
+    setData([
+      ...data,
+      {
+        id: new Date().getTime(),
+        months: months,
+        day: new Date().toLocaleString(),
+        task: value,
+      },
+    ]);
+    setValue("");
+  };
+
   return (
     <>
-      <Modal show={show} onHide={()=>setShow(false)}>
-        <Modal.Header closeButton >
-          <Modal.Title>Month</Modal.Title>
+      <Modal show={show} onHide={() => setShow(false)}>
+        <Modal.Header closeButton className="bg-danger">
+          <Modal.Title>{months}</Modal.Title>
         </Modal.Header>
         <Modal.Body>
-          <InputGroup size="sm" className="mb-3" value={value} onChange={(e)=>setValue(e.target.value)}>
-            <Form.Control />
-            <Button variant="primary" onClick={handleSubmit}>
-              Add
-            </Button>
-          </InputGroup>
-          <Form.Control type="datetime-local" />
+            <form action="">
+          <label>Enter a task</label>
+          <input
+            type="text"
+            className="mb-3 w-100"
+            value={value}
+            onChange={(e) => setValue(e.target.value)}
+            required
+          />
+          <label>Select date</label>
+          <input
+            type="date"
+            className="mb-3 w-100"
+            onChange={(e) => setDate(e.target.value)}
+            required
+          />
+          <button onClick={handleSubmit} className="mb-3 w-100 bg-danger">
+            Add
+          </button>
+          </form>
         </Modal.Body>
       </Modal>
     </>
