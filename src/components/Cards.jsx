@@ -9,6 +9,8 @@ const Cards = ({ months, bg }) => {
   const [value,setValue]=useState();
   const [date, setDate] = useState("");
   const [data,setData]=useState([])
+  console.log(data)
+  const deleteTodo = (id) => setData(data.filter((item) => item.id !== id));
   return (
     <Card style={{ width: "18rem", backgroundColor: bg }} >
       <Card.Body >
@@ -19,7 +21,7 @@ const Cards = ({ months, bg }) => {
        
         <Card.Text>
            { data.map((item)=>(
-                <Task {...item} value={value} date={date}/>
+                <Task {...item} value={value} date={date} deleteTodo={deleteTodo}/>
             ))}
         </Card.Text>
       </Card.Body>

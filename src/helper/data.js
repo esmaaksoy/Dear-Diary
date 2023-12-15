@@ -85,17 +85,4 @@ export const data = [
   },
 ];
 
-export const taskData = [
-  {
-    id: 1,
-    months: "November",
-    day: new Date().toLocaleString(),
-    task: "read a book",
-  },
-  {
-    id: 2,
-    months: "October",
-    day: new Date().toLocaleString(),
-    task: "shopping",
-  },
-];
+
