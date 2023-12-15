@@ -23,6 +23,7 @@ const CardModal = ({
         months: months,
         day: new Date().toLocaleString(),
         task: value,
+        edit:false,
       },
     ]);
     setValue("");

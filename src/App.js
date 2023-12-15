@@ -4,9 +4,12 @@ import Col from "react-bootstrap/Col";
 import { data } from "./helper/data";
 import Cards from "./components/Cards";
 import "./app.css"
+import Nav from "./components/Navbar";
 function App() {
   return (
-    <Container fluid="md">
+    <>
+    <Nav/>
+    <Container fluid="md" >
       <h1 className="text-center">Future Plans</h1>
       <Row className="bg-dark p-3">
         {data.map((item) => (
@@ -16,6 +19,7 @@ function App() {
         ))}
       </Row>
     </Container>
+    </>
   );
 }
 
