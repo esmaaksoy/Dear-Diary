@@ -10,6 +10,7 @@ const CardModal = ({
   setData,
   setDate,
   data,
+  bg,
 }) => {
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -29,7 +30,7 @@ const CardModal = ({
   return (
     <>
       <Modal show={show} onHide={() => setShow(false)}>
-        <Modal.Header closeButton className="bg-danger">
+        <Modal.Header closeButton style={{backgroundColor: bg }}>
           <Modal.Title>{months}</Modal.Title>
         </Modal.Header>
         <Modal.Body>
@@ -49,7 +50,7 @@ const CardModal = ({
             onChange={(e) => setDate(e.target.value)}
             required
           />
-          <button onClick={handleSubmit} className="mb-3 w-100 bg-danger">
+          <button onClick={handleSubmit} className="mb-3 w-100" style={{backgroundColor: bg , border: bg }}>
             Add
           </button>
           </form>
