@@ -9,11 +9,11 @@ const Nav = () => {
             <img
               alt=""
               src="https://cdn.pixabay.com/photo/2018/01/03/09/09/reserve-3057904_1280.png"
-              width="30"
-              height="30"
+              width="80"
+              height="80"
               className="d-inline-block align-top me-3"
             />
-            <p className='text-white display-4' > Dear Diary</p>
+            <p className='text-white display-6' > Dear Diary</p>
           </Navbar.Brand>
         </Container>
       </Navbar>
