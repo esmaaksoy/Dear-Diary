@@ -4,7 +4,7 @@ This application allows you to add tasks to specific months, enter date and task
 ## Screenshots
 ![Project snapshot](./random.gif) 
 
-[Dear Diary Live Page]()
+[Dear Diary Live Page](https://dear-diary-esma.netlify.app/)
 
 ## Tech/framework used
 <b>Built with</b> <br>
